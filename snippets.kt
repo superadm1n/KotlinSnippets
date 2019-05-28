@@ -62,3 +62,39 @@ fun working_with_lists() {
    println(myMutableList)
     
 }
+
+
+fun working_with_maps() {
+    /*
+     * Information on Kotlin Collections can be found here
+ 	 * https://kotlinlang.org/docs/reference/collections-overview.html 
+     * 
+     * Maps in Kotlin are like dictionaries in Python. They are objects
+     * that store the data in a key value pair
+     * Unlike Lists in Kotlin the values can be of different types, for instance
+     * some keys can correspond to a string value where other keys in the same dictionary
+     * can correspond to an integer value
+     */
+    
+    // Like lists, in order to get a mutable map this would need to be mutableMapOf()
+    val myMap = mapOf("first" to "Tony", "last" to "Robinson", "Age" to 25, "Interests" to listOf("Programming", "Running", "Reading"))
+    println(myMap)
+    
+    // Iterate over map
+    for (kvPair in myMap) {
+        println(kvPair)
+    }
+    
+    // Print all keys
+    println("All keys: ${myMap.keys}")
+    // Print all values
+    println("All values: ${myMap.values}")
+    
+    // Iterate over all keys, checking value type for a list
+    for (key in myMap.keys) {
+        println(myMap[key])
+        if (myMap[key] is List<*>) {
+            println("Hey this value is a list")
+        }
+    }
+}
