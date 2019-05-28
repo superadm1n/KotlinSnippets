@@ -93,6 +93,7 @@ fun working_with_maps() {
     // Iterate over all keys, checking value type for a list
     for (key in myMap.keys) {
         println(myMap[key])
+        // If the element is a list of any type
         if (myMap[key] is List<*>) {
             println("Hey this value is a list")
         }
